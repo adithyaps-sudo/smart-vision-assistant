@@ -1,269 +1,134 @@
-👁️ **Gesture-Based Smart Vision Assistant using YOLO & LLM**
-An AI-powered real-time vision assistant that combines object detection, hand gesture interaction, and Large Language Models (LLMs) to enable a completely touchless human-computer interaction system.
-Users can point at objects using hand gestures, select them, and ask questions to receive intelligent, context-aware responses.
+# 🤖  Smart Vision Assistant
 
-🚀 **Features**
-👁️** Real-Time Object Detection**
+An intelligent real-time Smart Vision Assistant developed using Computer Vision, Hand Gesture Recognition, Object Detection, and Large Language Model (LLM) integration. The system allows users to interact with detected objects using hand gestures and receive AI-generated responses through voice/text interaction.
 
+---
 
-Powered by YOLOv8
+# 📌 Features
 
+- Real-time Object Detection using YOLOv8
+- Hand Gesture Recognition using MediaPipe
+- Gesture-based Object Selection
+- Virtual Pointer Control
+- AI-powered Question Answering using Groq LLM
+- Interactive User Interface with Live Camera Feed
+- Smart Human-Computer Interaction System
 
-Detects multiple objects in real-time
+---
 
+# 🛠 Technologies Used
 
-Filters unnecessary classes (e.g., person)
+- Python
+- OpenCV
+- MediaPipe
+- YOLOv8
+- NumPy
+- Groq API / LLM
+- Computer Vision
+- Artificial Intelligence
 
+---
 
-✋** Gesture-Based Interaction**
+# ⚙️ Working Principle
 
+1. Captures live video using webcam.
+2. Detects objects in real time using YOLOv8.
+3. Tracks hand landmarks using MediaPipe.
+4. Uses finger gestures for virtual pointer control.
+5. Allows users to select objects using 2-finger gesture.
+6. Sends user questions to Groq LLM API.
+7. Generates intelligent AI responses related to selected objects.
 
-Built using MediaPipe Hand Landmarker
+---
 
+# 📂 Project Structure
 
-Finger-based control:
+```plaintext
+Smart-Vision-Assistant/
+│
+├── main.py
+├── yolov8n.pt
+├── hand_landmarker.task
+├── requirements.txt
+└── README.md
+````
 
+---
 
-👆 1 Finger → Pointer movement
+# ▶️ Installation
 
+## Clone Repository
 
-✌️ 2 Fingers → Select object (hold gesture)
+```bash
+git clone <your-github-repo-link>
+cd Smart-Vision-Assistant
+```
 
+## Install Dependencies
 
+```bash
+pip install -r requirements.txt
+```
 
+---
 
-🎯 **Smart Object Selection**
+# 📦 Required Libraries
 
+```bash
+pip install opencv-python mediapipe ultralytics numpy openai
+```
 
-Pointer tracks index finger
+---
 
+# ▶️ Run the Project
 
-Hover detection inside bounding box
-
-
-Hold gesture (1 sec) for confirmation
-
-
-🧠 **AI Question Answering**
-
-
-Integrated with LLaMA 3 (via Groq API)
-
-
-Ask questions about selected objects
-
-
-Provides intelligent, contextual answers
-
-
-🖥️ **Interactive UI**
-
-
-Bounding boxes with labels
-
-
-Hover highlight effect
-
-
-Smooth pointer movement
-
-
-Real-time feedback display
-
-
-
-🧠 **How It Works**
-
-
-Webcam captures live video feed
-
-
-YOLOv8 detects objects in the frame
-
-
-MediaPipe tracks hand landmarks (21 key points)
-
-
-Finger positions determine gesture
-
-
-Index finger controls on-screen pointer
-
-
-Pointer hovering inside object → detection
-
-
-Hold ✌️ gesture → object selection
-
-
-Press Q to ask a question
-
-
-LLM generates an intelligent response
-
-
-
-🏗️ **System Architecture**
-Camera Input
-     ↓
-YOLOv8 → Object Detection
-     ↓
-MediaPipe → Hand Tracking
-     ↓
-Gesture Logic → Pointer Control
-     ↓
-Object Selection
-     ↓
-LLM (Groq API - LLaMA 3)
-     ↓
-Answer Output
-
-
-🛠️ **Technologies Used**
-
-
-Python
-
-
-OpenCV – Video processing & UI rendering
-
-
-MediaPipe – Hand gesture tracking
-
-
-YOLOv8 (Ultralytics) – Object detection
-
-
-NumPy – Numerical operations
-
-
-Groq API (LLaMA 3) – AI responses
-
-
-
-📦 **Requirements**
-Install all dependencies:
-pip install opencv-python mediapipe numpy ultralytics openai
-
-
-⚙️ **Setup & Installation**
-1️⃣ **Clone the repository**
-git clone https://github.com/your-username/gesture-vision-assistant.git
-cd gesture-vision-assistant
-
-2️⃣ **Add required model files**
-Make sure these files are in your project folder:
-
-
-yolov8n.pt
-
-
-hand_landmarker.task
-
-
-3️⃣ **Add your API key**
-Replace this in the code:
-api_key="your_api_key_here"
-
-
-4️⃣ **Run the project**
+```bash
 python main.py
+```
 
+---
 
-🎮 **How to Use**
+# 🎮 Controls
 
+| Gesture / Key | Function        |
+| ------------- | --------------- |
+| 2 Fingers     | Select Object   |
+| Q Key         | Ask AI Question |
+| ESC Key       | Exit Program    |
 
-Launch the program
+---
 
+# 📌 Note
 
-Show your hand to the camera
+Ensure that:
 
+* `yolov8n.pt`
+* `hand_landmarker.task`
 
-Move pointer using index finger
+are placed correctly in the project directory before running the program.
 
+---
 
-Hover over an object
+# 🚀 Future Improvements
 
+* Voice Assistant Integration
+* Text-to-Speech Response
+* Multiple Hand Gesture Controls
+* Smart Home Automation Integration
+* Mobile/Embedded Deployment
 
-Hold ✌️ gesture for 1 second to select
+---
 
+# 👨‍💻 Developed By
 
-Press Q
+Adithya P S
+Robotics & Automation Engineering
 
+---
 
-Ask your question in terminal
+# ⭐ Support
 
+If you found this project useful, consider giving this repository a ⭐ on GitHub!
 
-Get AI-generated answer
-
-
-🏆 **Key Highlights**
-
-
-Developed a multimodal AI system (Vision + Gesture + LLM)
-
-
-Implemented real-time object interaction
-
-
-Enabled touchless control using hand gestures
-
-
-Integrated AI-based contextual question answering
-
-
-
-🌍 **Applications**
-
-
-Smart assistants
-
-
-Interactive kiosks
-
-
-Accessibility tools
-
-
-AI-based education systems
-
-
-Human-computer interaction research
-
-
-
-🚧 **Future Improvements**
-
-
-🎤 Voice-based input
-
-
-📱 Mobile or web integration
-
-
-🌐 Multi-language support
-
-
-🤖 Advanced gesture recognition
-
-
-
-👤**Author**
-P.S Adithya
-📍 Kerala, India
-
-⚠️ Notes
-
-
-Ensure model files are correctly placed
-
-
-Webcam access is required
-
-
-Internet connection needed for LLM
-
-
-
-⭐ **Support**
-If you found this project useful, consider giving it a ⭐ on GitHub!
+```
+```
