@@ -1,4 +1,4 @@
-# Smart Vision Assistant
+ # Smart Vision Assistant
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python&logoColor=white)
 ![OpenCV](https://img.shields.io/badge/OpenCV-Computer%20Vision-green?logo=opencv&logoColor=white)
@@ -86,4 +86,138 @@ Smart Vision Assistant turns a standard webcam into an interactive AI interface.
 
 ```
 Smart-Vision-Assistant/
-├── main.py
+├── main.py                  # Application entry point
+├── yolov8n.pt               # YOLOv8 nano model weights
+├── hand_landmarker.task     # MediaPipe hand landmark model
+├── requirements.txt         # Python dependencies
+└── README.md
+```
+
+---
+
+## Installation
+
+### Prerequisites
+
+- Python 3.8 or higher
+- A working webcam
+- A Groq API key ([get one here](https://console.groq.com/))
+
+### Steps
+
+1. **Clone the repository**
+
+```bash
+   git clone https://github.com/adithyaps-sudo/Smart-Vision-Assistant.git
+   cd Smart-Vision-Assistant
+```
+
+2. **(Recommended) Create a virtual environment**
+
+```bash
+   python -m venv venv
+   source venv/bin/activate      # On Windows: venv\Scripts\activate
+```
+
+3. **Install dependencies**
+
+```bash
+   pip install -r requirements.txt
+```
+
+   Or install the libraries manually:
+
+```bash
+   pip install opencv-python mediapipe ultralytics numpy groq
+```
+
+---
+
+## Configuration
+
+### Model files
+
+Make sure the following files are in the project root directory:
+
+- `yolov8n.pt`
+- `hand_landmarker.task`
+
+### API key
+
+Set your Groq API key as an environment variable. Do not hard-code it in the source code or commit it to GitHub.
+
+```bash
+# Linux / macOS
+export GROQ_API_KEY="your_api_key_here"
+
+# Windows (PowerShell)
+$env:GROQ_API_KEY="your_api_key_here"
+```
+
+---
+
+## Usage
+
+1. Run the application:
+
+```bash
+   python main.py
+```
+
+2. Point your index finger to move the on-screen pointer.
+3. Hover over a detected object and raise two fingers to select it.
+4. Press `Q` to ask a question about the selected object.
+5. Read the AI-generated response on screen.
+6. Press `ESC` to exit.
+
+---
+
+## Troubleshooting
+
+| Issue | Possible Solution |
+|-------|-------------------|
+| Camera not detected | Close other apps using the webcam, or change the camera index in `cv2.VideoCapture()` |
+| Model file not found | Confirm `yolov8n.pt` and `hand_landmarker.task` are in the project root |
+| LLM response fails | Check that `GROQ_API_KEY` is set and your internet connection is working |
+| Low frame rate | Use a smaller YOLOv8 model, lower the camera resolution, or run on a GPU |
+| Gestures not recognized | Improve lighting and keep your hand fully inside the camera frame |
+
+---
+
+## Future Improvements
+
+- Voice assistant integration
+- Text-to-speech responses
+- Support for additional hand gestures
+- Smart home automation integration
+- Mobile and embedded device deployment
+
+---
+
+## Contributing
+
+Contributions are welcome. To contribute:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/your-feature`)
+3. Commit your changes (`git commit -m "Add your feature"`)
+4. Push to the branch (`git push origin feature/your-feature`)
+5. Open a Pull Request
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+---
+
+## Author
+
+**Adithya P S**
+Robotics & Automation Engineering
+GitHub: [@adithyaps-sudo](https://github.com/adithyaps-sudo)
+
+---
+
+If you found this project useful, please consider giving it a star on GitHub.
